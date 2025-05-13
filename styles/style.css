@@ -1,0 +1,397 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 5px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.welcome {
+  margin: 20px;
+  padding: 10px;
+}
+
+.welcome p {
+  text-align: center;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  margin: 5px;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+
+nav ul.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  background: #333;
+  padding: 0.5rem 1.5rem;
+}
+
+nav ul.nav-links li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav ul.nav-links li a:hover {
+  color: #00bcd4;
+}
+
+:root {
+  --bg: #f4f4f4;
+  --text: #333;
+  --nav-bg: #333;
+  --nav-text: white;
+  --accent: #00bcd4;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.5s, color 0.5s;
+}
+
+/* Dark Theme */
+body.dark-mode {
+  --bg: #121212;
+  --text: #eee;
+  --nav-bg: #1f1f1f;
+  --nav-text: #f4f4f4;
+  --accent: #00e0ff;
+}
+
+header {
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  transition: background 0.5s ease;
+}
+
+nav ul.nav-links li a {
+  color: var(--nav-text);
+}
+
+nav ul.nav-links li a:hover {
+  color: var(--accent);
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--nav-text);
+  margin-right: 3rem;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+}
+
+/* Slide-in animation for menu items */
+.nav-links li {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: slideIn 0.5s forwards;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Toggle button animation */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Responsive menu */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  nav ul {
+    position: fixed;
+    top: 60px;
+    right: -250px;
+    background-color: var(--nav-bg);
+    padding: 1rem;
+    width: 250px;
+    transition: right 0.5s ease;
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+  }
+  nav ul.show {
+    right: 0;
+    background-color: var(--nav-bg);
+  }
+  nav ul li {
+    margin-bottom: 0.5rem;
+  }
+  nav ul li a {
+    margin: 0;
+  }
+}
+
+/* Fade-in for page sections */
+main section {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.testimonials {
+  padding: 3rem 1rem;
+  text-align: center;
+  background: var(--bg);
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.testimonial-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.testimonial-card {
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  animation: fadeIn 1s ease forwards;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+}
+
+.projects {
+  padding: 3rem 1rem;
+  background: var(--bg);
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  animation: fadeIn 1s ease forwards;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin: 1rem 0 0.5rem;
+}
+
+.project-card p {
+  padding: 0 1rem;
+  font-size: 0.95rem;
+}
+
+.project-btn {
+  display: inline-block;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: #000;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.project-btn:hover {
+  background: #0099aa;
+}
+
+/* Footer styles */
+footer {
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* image slider */
+.slider {
+  position: relative;
+  overflow: hidden;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.carousel-inner {
+  position: relative;
+  display: flex;
+}
+
+.carousel-img {
+  display: none;
+  width: 100%;
+  height: auto;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  border-radius: 10px;
+}
+
+.carousel-img.active {
+  display: block;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.prev { left: 0; }
+.next { right: 0; }
+
+.carousel-dots {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.dot {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #717171;
+}
+
+/* contact */
+form {
+  margin: 20px;
+}
+
+form input,
+form textarea {
+  padding: 3px;
+  border-radius: 3px;
+}
+
+#send {
+  padding: 5px;
+}
+

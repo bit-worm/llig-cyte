@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LLIG</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <nav>
+        <div class="nav-container">
+          <h1 id="menu-heading">Live Learn Inspire And Grow</h1>
+          <div class="nav-actions">
+            <button class="theme-toggle" aria-label="Toggle Theme">🌙</button>
+            <button class="menu-toggle" aria-label="Toggle Menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+        <ul class="nav-links">
+          <li style="--i:1"><a href="index.html">Home</a></li>
+          <li style="--i:2"><a href="pages/about.html">About</a></li>
+          <li style="--i:3"><a href="pages/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+  <main>
+
+      <section class="slider" id="carousel">
+        <div class="carousel-inner">
+          <img src="images/project1.jpg" alt="Slide 1" class="carousel-img active">
+          <img src="images/project2.jpg" alt="Slide 2" class="carousel-img">
+          <img src="images/project3.jpg" alt="Slide 3" class="carousel-img">
+        </div>
+        <button class="carousel-btn prev">&#10094;</button>
+        <button class="carousel-btn next">&#10095;</button>
+        <div class="carousel-dots">
+          <span class="dot active" data-slide="0"></span>
+          <span class="dot" data-slide="1"></span>
+          <span class="dot" data-slide="2"></span>
+        </div>
+      </section>
+
+    <section class="welcome">
+      <h2>Welcome to My Website</h2>
+      <p>This is a modern, responsive website built with HTML5, CSS3, and JavaScript.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 LLIG. All rights reserved.</p>
+  </footer>
+  </div>
+
+  <script src="scripts/script.js"></script>
+  <script src="scripts/image-slider.js"></script>
+</body>
+</html>

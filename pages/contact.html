@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LLIG</title>
+  <link rel="stylesheet" href="../styles/style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <nav>
+        <div class="nav-container">
+          <h1 id="menu-heading">Live Learn Inspire And Grow</h1>
+          <div class="nav-actions">
+            <button class="theme-toggle" aria-label="Toggle Theme">🌙</button>
+            <button class="menu-toggle" aria-label="Toggle Menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+        <ul class="nav-links">
+          <li style="--i:1"><a href="../index.html">Home</a></li>
+          <li style="--i:2"><a href="about.html">About</a></li>
+          <li style="--i:3"><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+  <main>
+    <h2>Contact Us</h2>
+    <form name="contactForm" onsubmit="validateForm(event)" netlify>
+      <label>Name:</label><br>
+      <input type="text" name="name"><br><br>
+      <label>Email:</label><br>
+      <input type="email" name="email"><br><br>
+      <label>Message:</label><br>
+      <textarea name="message" rows="5"></textarea><br><br>
+      <input type="submit" value="Send Message" id="send">
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 LLIG. All rights reserved.</p>
+  </footer>
+  </div>
+
+  <script src="../scripts/script.js"></script>
+</body>
+</html>
