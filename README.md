@@ -3,13 +3,13 @@
 - A website for LLIG
 
 ### 👀 Visit
-- You can navigate [here](https://llig.netlify.app) to view the site.
+- You can navigate 👉️ [here](https://llig.netlify.app) to view the site.
 
 ### 🛠️ Tools
 1. HTML
 2. JavaScript
 3. CSS
-4. [Netlify](https://netlify.com) *for hosting*
+4. [Netlify](https://netlify.com)  - *for hosting*
 
 
 # 📥️ Contact
